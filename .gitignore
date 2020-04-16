@@ -1,0 +1,11 @@
+.metadata/
+
+n-001-julian-calendar-backend/.classpath
+n-001-julian-calendar-backend/.project
+n-001-julian-calendar-backend/.settings/
+n-001-julian-calendar-backend/target/
+
+n-001-julian-calendar-frontend/.classpath
+n-001-julian-calendar-frontend/.project
+n-001-julian-calendar-frontend/.settings/
+n-001-julian-calendar-frontend/target/
