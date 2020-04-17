@@ -13,7 +13,9 @@ import javax.ws.rs.Produces;
 public class Julian {
 
 	/*
-	 * Para testar o endpoint curl -X GET
+	 * Para testar o endpoint 
+	 * 
+	 * curl -X GET
 	 * http://localhost:8080/n-001-julian-calendar-backend/webapi/convert/2000-01-01-12-00-00
 	 */
 	@GET
