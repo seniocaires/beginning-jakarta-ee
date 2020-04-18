@@ -1,0 +1,12 @@
+body {
+	color: #000044;
+}
+
+div.clearfloat {
+	clear: both;
+}
+
+.err {
+	color: red;
+}
+;
