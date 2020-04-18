@@ -6,11 +6,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>book.jakarta8</groupId>
-	<artifactId>n-003-rest-date</artifactId>
+	<artifactId>n-004-calypso</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>n-003-rest-date</name>
+	<name>n-004-calypso</name>
 	<!-- FIXME change it to the project's website -->
 	<url>http://www.example.com</url>
 
