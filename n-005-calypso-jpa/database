@@ -1,0 +1,48 @@
+1)
+cd [GLASSFISH_INST]
+cd bin
+./asadmin start-database
+
+2)
+cd [GLASSFISH_INST]
+cd javadb/bin
+# start the DB client
+./ij
+
+3)
+ij> connect 'jdbc:derby://localhost:1527/calypso;
+    create=true;user=user0';
+
+
+ij> call SYSCS_UTIL.SYSCS_CREATE_USER('user0','pw715');
+
+4)
+cd [GLASSFISH_INST]
+cd bin
+./asadmin stop-database
+./asadmin start-database
+
+5)
+cd [GLASSFISH_INST]
+cd bin
+./asadmin create-jdbc-connection-pool --datasourceclassname org.apache.derby.jdbc.ClientDataSource --restype javax.sql.DataSource --property portNumber=1527:password=pw715:user=user0:serverName=localhost:databaseName=calypso:securityMechanism=3 Calypso
+
+./asadmin create-jdbc-resource --connectionpoolid Calypso jdbc/Calypso
+
+6)
+cd [GLASSFISH_INST]
+cd javadb/bin
+# start the DB client
+./ij
+
+ij> connect 'jdbc:derby://localhost:1527/calypso;user=user0;password=pw715';
+CREATE TABLE MEMBER (ID INT NOT NULL, LAST_NAME VARCHAR(128) NOT NULL, FIRST_NAME VARCHAR(128) NOT NULL, BIRTHDAY CHAR(10) NOT NULL, PRIMARY KEY (ID));
+
+INSERT INTO MEMBER (ID, LAST_NAME, FIRST_NAME, BIRTHDAY) VALUES (-3, 'Smith', 'John', '1997-11-05'), (-2, 'Tender', 'Linda', '1997-11-05'), (-1, 'Quast', 'Pat', '2003-04-13');
+
+CREATE SEQUENCE MEMBER_SEQ start with 1 increment by 50;
+
+
+7)
+from the EclipseLink distribution into the “WEB-INF/lib” folder. Add those JARs to
+the “Libraries” tab of the project properties (section: “Java Build Path”).
