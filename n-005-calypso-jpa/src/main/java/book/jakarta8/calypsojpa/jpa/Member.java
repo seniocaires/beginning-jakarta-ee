@@ -1,10 +1,15 @@
 package book.jakarta8.calypsojpa.jpa;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -28,6 +33,10 @@ public class Member implements Comparable<Member> {
 	@Column(name = "BIRTHDAY", length = 10)
 	@Pattern(regexp = "\\d{4}-\\d{2}-\\d{2}", message = "Birthday format: yyyy-MM-dd.")
 	private String birthday;
+	
+	@JoinColumn(name = "MEMBER_ID")
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval=true)
+    private Set<Status> status;
 
 	@Override
 	public int compareTo(Member o) {
@@ -68,5 +77,13 @@ public class Member implements Comparable<Member> {
 
 	public void setBirthday(String birthday) {
 		this.birthday = birthday;
+	}
+
+	public Set<Status> getStatus() {
+		return status;
+	}
+
+	public void setStatus(Set<Status> status) {
+		this.status = status;
 	}
 }
