@@ -30,4 +30,8 @@ n-005-calypso-jpa/.project
 n-005-calypso-jpa/.settings/
 n-005-calypso-jpa/target/
 
+n-006-testEjbServer/.classpath
+n-006-testEjbServer/.project
+n-006-testEjbServer/.settings/
+n-006-testEjbServer/target/
 
