@@ -1,0 +1,1 @@
+Run As... > Maven build... > goals “jaxws:wsimport.”

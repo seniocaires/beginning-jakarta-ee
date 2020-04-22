@@ -35,3 +35,13 @@ n-006-testEjbServer/.project
 n-006-testEjbServer/.settings/
 n-006-testEjbServer/target/
 
+n-008-wsdate/.classpath
+n-008-wsdate/.project
+n-008-wsdate/.settings/
+n-008-wsdate/target/
+
+n-009-wsdate-client/.classpath
+n-009-wsdate-client/.project
+n-009-wsdate-client/.settings/
+n-009-wsdate-client/target/
+
