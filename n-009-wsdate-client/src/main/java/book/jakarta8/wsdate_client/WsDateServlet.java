@@ -22,6 +22,16 @@ import book.jakarta8.wsdate.generated.WsDateService;
  * 
  * Acesse:
  * http://localhost:8080/n-009-wsdate-client/WsDateServlet
+ * 
+ * 
+ * If, for whatever reason, you need to process XML data directly, outside JAX-WS, Jakarta
+ * EE 8 also includes several technologies to create and parse XML data:
+ * - JAXP 1.6
+ * Java API for XML Processing
+ * - StAX 1.0
+ * Streaming API for XML. Included within JAXP.
+ * - JAXB 2.2
+ * Java XML Binding
  */
 @WebServlet(name = "WsDateServlet", urlPatterns = { "/WsDateServlet" })
 public class WsDateServlet extends HttpServlet {
