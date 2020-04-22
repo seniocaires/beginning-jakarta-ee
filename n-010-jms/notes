@@ -1,0 +1,14 @@
+To create a queue or topic within the Glassfish server’s JMS provider, go to Resources > JMS Resources > Destination Resources and click on the “New...” button.
+
+    JNDI Name:                 jms/TestQueue
+    Physical Destination Name: TestQueue
+    Resource Type:             javax.jms.Queue
+    Description:               Test Queue
+    Status:                    [x]
+
+
+    JNDI Name:                 jms/TestTopic
+    Physical Destination Name: TestTopic
+    Resource Type:             javax.jms.Topic
+    Description:               Test Topic
+    Status:                    [x]

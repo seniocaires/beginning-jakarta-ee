@@ -45,3 +45,7 @@ n-009-wsdate-client/.project
 n-009-wsdate-client/.settings/
 n-009-wsdate-client/target/
 
+n-010-jms/.classpath
+n-010-jms/.project
+n-010-jms/.settings/
+n-010-jms/target/
