@@ -1,0 +1,47 @@
+– – TransactionAttributeType.REQUIRED
+This is the default; if the EJB uses container-managed transactions
+and you don’t specify an @TransactionAttribute for a method,
+REQUIRED is assumed for that method. If the client runs itself in
+a transactional context, the EJB method will participate in that
+transaction. If the client didn’t start a transaction before the EJB
+method was called, the container will start a new transaction
+before the method body gets executed, and it finishes the
+transaction immediately after the method returns.
+
+– – TransactionAttributeType.REQUIRES_NEW
+If the client is not running in a transaction itself, the container will
+start a new transaction before the method body gets executed, and
+it finishes the transaction immediately after the method returns.
+Otherwise, the client’s transaction gets temporarily suspended, a
+new transaction gets created for the method execution, and after
+the method finishes the client’s transaction gets resumed.
+
+– – TransactionAttributeType.MANDATORY
+The client must be running inside its own transaction
+context, and the EJB method execution participates in that
+transaction. If the client does not have a transaction, a
+TransactionRequiredException will be thrown.
+
+– – TransactionAttributeType.NOT_SUPPORTED
+If the client runs inside a transaction, it gets temporarily
+suspended. The EJB method then runs outside any transaction
+context. After the method returns, the client’s transaction gets
+resumed (if applicable). Use this type if transactionality is not
+needed and you want improved performance.
+
+– – TransactionAttributeType.SUPPORTS
+Only if the client is running in its own transaction, it will continue
+to use that one while the method gets executed. Otherwise, no
+transaction gets used or created.
+
+– – TransactionAttributeType.NEVER
+The client must not run in its own transaction. Otherwise, throw
+a RemoteException exception. The EJB method runs outside any
+transaction.
+
+
+Note Usually container-managed transactions are easier to code compared
+to bean-managed transactions. However, with container-managed transactions
+EJB methods get associated with exactly one transaction or none at all. If
+during a method execution you need several consecutive transactions, you must
+use bean-­managed transactions.
