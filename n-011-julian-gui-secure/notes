@@ -1,0 +1,18 @@
+localhost:4848
+
+Configurations >> server-config >> Security
+Security Manager = true
+
+Add users
+
+http://localhost:4848/common/security/realms/manageUsers.jsf?name=file&configName=server-config
+
+Configurations >> server-config >> Security >> Realms >> file
+
+UserID: AdminUser
+Group List: ApplAdmin
+Password: pW41834
+
+
+http://localhost:8080/n-011-julian-gui-secure/
+2019-01-02 11:22:33 >> submit
