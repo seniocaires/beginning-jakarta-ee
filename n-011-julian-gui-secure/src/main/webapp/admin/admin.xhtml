@@ -8,6 +8,10 @@
 <h:body>
 	<h:messages globalOnly="true" />
   Admin Page ...<p />
+  
+  <h:outputText value="#{julianComEjb.greetingTxt}"/>
+  <p/>
+  
 	<h:outputLink value="#{request.contextPath}#{param['backref']}">
 		<h:outputText value="#{bundle.back}" />
 	</h:outputLink>

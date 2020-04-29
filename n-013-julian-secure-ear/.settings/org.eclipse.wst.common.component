@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="n-013-julian-secure-ear">
+        <wb-resource deploy-path="/" source-path="/EarContent" tag="defaultRootSource"/>
+        <dependent-module archiveName="n-012-julian-secure-ejb.jar" deploy-path="/" handle="module:/resource/n-012-julian-secure-ejb/n-012-julian-secure-ejb">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="n-011-julian-gui-secure.war" deploy-path="/" handle="module:/resource/n-011-julian-gui-secure/n-011-julian-gui-secure">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>
