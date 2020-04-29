@@ -1,6 +1,8 @@
 package book.jakarta8.n_001_julian_calendar_backend;
 
 import java.util.function.Function;
+import java.util.logging.Logger;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -12,6 +14,8 @@ import javax.ws.rs.Produces;
 @Path("/")
 public class Julian {
 
+	  private final static Logger LOG = Logger.getLogger(Julian.class.toString());
+	
 	/*
 	 * Para testar o endpoint 
 	 * 
@@ -23,6 +27,8 @@ public class Julian {
 	@Path("convert/{inDate : .*}")
 	public String convert(@PathParam("inDate") String inDate) {
 
+		LOG.entering(this.getClass().toString(),"convert",new Object[]{ inDate });
+		
 		Function<Double, Integer> trunc = (d) -> d.intValue();
 
 		// yyyy-MM-dd-HH-mm-ss
@@ -36,6 +42,8 @@ public class Julian {
 				+ trunc.apply(275.0 * inMonth / 9) + inDay + 1721013.5 + 1.0 * (inHour + inMinute / 60.0) / 24
 				- 0.5 * Math.signum(100 * inYear + inMonth - 190002.5) + 0.5;
 
+		LOG.exiting(this.getClass().toString(),"convert", jd);
+		
 		return "" + jd;
 	}
 }
